@@ -1,0 +1,203 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+    --clock-color: #323238;
+    --bg-color: white;
+
+    --bg-button-on: #02799D;
+    --bg-button-off: #E1E1E6;
+    
+    --fill-button-on: #E1E1E6;
+    --fill-button-off: #323238;
+    --button-stroke: #323238;
+
+    --slider-ball: #323238;
+    --slider-bar: #323238;
+}   
+
+.dark-theme {
+    --clock-color: white;
+    --bg-color: #121214;
+
+    --bg-button-on: #0A3442;
+    --bg-button-off: #29292E;
+    --button-stroke: #C4C4CC;
+    
+    --fill-button-on: #FFFFFF;
+    --fill-button-off: #C4C4CC;
+
+
+    --slider-ball: white;
+    --slider-bar: white;
+}
+
+.hide {
+    display: none;
+}
+
+/* light/dark mode */
+
+#mode {
+    position: absolute;
+    top: 60px;
+    right: 60px;
+}
+
+#mode button {
+    background-color: transparent;
+    border: none;
+}
+
+/* light/dark mode */
+
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-color);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    gap: clamp(2.0rem, 10.0rem + 10vw, 20.0rem);
+    height: 100vh;
+    align-items: center;
+}
+
+/* timer */
+
+#timer button {
+    border-radius: 2.4rem;
+    border: none;
+    background-color: transparent;
+}
+
+#timer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#clock {
+    display: flex;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12.6rem;
+    line-height: 11rem;
+    font-weight: 700;
+    color: var(--clock-color);
+
+    margin-bottom: 4.8rem;
+}
+
+span {
+    padding: 0;
+    margin: 0;
+}
+
+/* timer */
+
+
+/* moods and config */
+.cards {
+    position: relative;
+}
+
+.cards svg {
+    width: 100%;
+    position: absolute;
+    display: block;
+    top: 24px;
+}
+
+#mood {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.2rem;
+}
+
+#mood button {
+    width: 13.8rem;
+    height: 15.2rem;
+    border-radius: 24px;
+    border-style: none;
+}
+#button-wrapper svg path {
+    fill: var(--button-stroke)
+}
+
+
+#button-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+
+}
+
+
+
+.bgOn {
+    fill: var(--bg-button-on);
+    transition: 200ms;
+    background-color: var(--bg-button-on);
+}
+
+.bgOff {
+    fill: var(--bg-button-off);
+    transition: 200ms;
+    background-color: var(--bg-button-off);
+}
+
+.fillOn {
+    fill: var(--fill-button-on);
+    transition: 200ms;
+}
+
+
+.fillOff {
+    fill: var(--fill-button-off);
+    transition: 200ms;
+}
+
+/* moods and config */
+
+/* slider config */
+
+.slidecontainer {
+    position: absolute;
+    width: 100%;
+    bottom: 2.4rem;
+    left: 2.4rem;
+}
+
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 5rem;  
+
+    width: 9.0rem;
+    height: 4px;
+    
+
+    background: var(--slider-bar);
+    outline: none;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%; 
+    background: var(--slider-ball);
+    cursor: pointer;
+  }
